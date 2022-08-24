@@ -1,0 +1,111 @@
+import os
+import random
+from datetime import date, datetime
+
+import requests
+from wechatpy import WeChatClient
+from wechatpy.client.api import WeChatMessage
+
+# 当前日期
+today = datetime.now()
+
+# 微信公众号 app_id
+app_id = os.environ["APP_ID"]
+
+# 微信公众号 app_secret
+app_secret = os.environ["APP_SECRET"]
+
+# 彩虹屁接口密钥 key
+key = os.environ["KEY"]
+
+# 微信公众号 模板id
+template_id = os.environ["TEMPLATE_ID"]
+
+# 用户列表 也可通过接口获取，但是接口获取的只有用户id没有用户昵称，不方便部分数据展示，如果有新增人员，对应添加一个user对象即可
+user_id_list = [
+    {'user_id': 'olqaK5sXw4RM4PEaRgi9I0kH4ldE', "name": 'ㅤ', "date": "2021-03-01", "birthday": "03-26",
+     'city': '440300'},
+     {'user_id': 'olqaK5iLtf1e1O8y50FrAyoVF5G8', "name": "缱绻", "date": "2021-03-01", "birthday": "10-09",
+     'city': '440300'},
+     {'user_id': 'olqaK5nbxrC4ehk7Lf9QkSHHbfng', "name": "四喜丸子", "date": "2021-03-01", "birthday": "02-12",
+     'city': '440300'},
+     {'user_id': 'olqaK5p-v3b6gvFif4XLaAwfg0EE', "name": "别南山", "date": "2021-03-01", "birthday": "10-21",
+     'city': '440300'},
+     {'user_id': 'olqaK5haaWE7C8NJ8bclDpKp0Zg8', "name": "苏子瑜", "date": "2021-03-01", "birthday": "05-01",
+     'city': '440300'}
+]
+
+
+# 彩虹屁
+def get_words():
+    words = requests.get("https://api.shadiao.pro/chp")
+    if words.status_code != 200:
+        return get_words()
+    result = words.json()['data']['text']
+    print(result)
+    return result
+
+
+# 文字颜色
+def get_random_color():
+    return "#%06x" % random.randint(0, 0xFFFFFF)
+
+
+# 天气信息
+def get_weather(city):
+    url = "https://restapi.amap.com/v3/weather/weatherInfo?output=JSON&key=" + key + "&city=" + city
+    res = requests.get(url).json()
+    print(res)
+    weather = res["lives"][0]
+    return weather['weather'], weather['temperature'], weather['winddirection'], weather['province'] + weather[
+        'city']
+
+
+# 总天数
+def get_count(start_date):
+    delta = today - datetime.strptime(start_date, "%Y-%m-%d")
+    return delta.days
+
+
+# 计算生日天数
+def get_birthday(birthday):
+    print(birthday)
+    next = datetime.strptime(str(date.today().year) + "-" + birthday, "%Y-%m-%d")
+    if next < datetime.now():
+        next = next.replace(year=next.year + 1)
+    return (next - today).days
+
+
+# 发送消息 支持批量用户
+def send_message():
+    for user in user_id_list:
+        user_id = user.get('user_id')
+        name = user.get('name')
+        birthday = user.get('birthday')
+        start_date = user.get('date')
+        city = user.get('city')
+        get_count(start_date)
+        get_birthday(birthday)
+        print(user_id)
+
+        wea, temperature, winddirection, cityName = get_weather(city)
+
+        client = WeChatClient(app_id, app_secret)
+
+        wm = WeChatMessage(client)
+
+        data = {
+            "name": {"value": name, "color": get_random_color()},
+            "weather": {"value": wea, "color": get_random_color()},
+            "temperature": {"value": temperature + "℃", "color": get_random_color()},
+            "cityname": {"value": cityName, "color": get_random_color()},
+            "winddirection": {"value": winddirection, "color": get_random_color()},
+            "love_days": {"value": get_count(start_date), "color": get_random_color()},
+            "birthday_left": {"value": get_birthday(birthday), "color": get_random_color()},
+            "words": {"value": get_words(), "color": get_random_color()}
+        }
+        res = wm.send_template(user_id, template_id, data)
+        print(res)
+
+
+send_message()
