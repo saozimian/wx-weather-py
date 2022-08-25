@@ -62,21 +62,23 @@ Gitee：https://gitee.com/zhanghuan08/wx-weather-py
 
 有了上面的信息，我们返回到第一步，在我们`Fork`下来的项目中进行配置。
 
-## 3、申请天气接口
+### 3、申请天气接口
 
-高德开放平台：https://lbs.amap.com/
+> 高德开放平台：https://lbs.amap.com/
 
-1、我们这边使用高德开放平台的天气查询接口。没有账号首先进行注册。
+#### 3.1、注册
+
+如果我们这边使用高德开放平台的天气查询接口。没有账号首先进行。
 
 ![image-20220824211053139](https://image.codehuan.com/image/202208242110590.png)
 
-2、来到控制台创建应用。
+#### 3.2、创建应用
 
 `应用名称` 和`应用类型`可以随便填写。
 
 ![image-20220824211252800](https://image.codehuan.com/image/202208242112938.png)
 
-3、添加`Key`
+#### 3.3、添加`Key`
 
 Key名称：任意填写。
 
@@ -84,9 +86,32 @@ Key名称：任意填写。
 
 ![image-20220824211434237](https://image.codehuan.com/image/202208242114560.png)
 
-3、完成之后获取我们的`Key`
+#### 3.4、获取`Key`
 
 ![image-20220824211610758](https://image.codehuan.com/image/202208242116977.png)
+
+#### 3.5、天气接口
+
+文档地址：https://lbs.amap.com/api/webservice/guide/api/weatherinfo
+
+| URL      | https://restapi.amap.com/v3/weather/weatherInfo?parameters |
+| -------- | ---------------------------------------------------------- |
+| 请求方式 | GET                                                        |
+
+- **请求参数**
+
+| 参数名     | 含义             | 规则说明                                                     | 是否必须 | 缺省值 |
+| :--------- | :--------------- | :----------------------------------------------------------- | :------- | :----- |
+| key        | 请求服务权限标识 | 用户在高德地图官网[申请web服务API类型KEY](https://lbs.amap.com/dev/) | 必填     | 无     |
+| city       | 城市编码         | 输入城市的adcode，adcode信息可参考[城市编码表](https://lbs.amap.com/api/webservice/download) | 必填     | 无     |
+| extensions | 气象类型         | 可选值：base/allbase:返回实况天气all:返回预报天气            | 可选     | 无     |
+| output     | 返回格式         | 可选值：JSON,XML                                             | 可选     | JSON   |
+
+- **服务示例**
+
+```shell
+https://restapi.amap.com/v3/weather/weatherInfo?city=110101&key=<用户key>
+```
 
 ## 4、修改配置
 
