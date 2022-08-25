@@ -118,12 +118,21 @@ Key名称：任意填写。
 
 可自行修改定时任务规则（github的cron没有秒）
 
+**需要注意：**
+*因为毕竟是免费的服务器，所以如果选择的定时任务执行的时间节点可能存在很多个任务，我们的任务可能就会被加入到队列中进行排队，所以不一定是按照当时的时间去执行，我们可以错开时间去执行我们的定时任务。*
+
+或者添加 `workflow_dispatch:` 在我们的定时任务列表会出现一个按钮，可以手动去执行
+
+![image-20220825121735027](https://image.codehuan.com/image/202208251217399.png)
+
+`main.yml样例`
 ```yaml
 name: morning
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '50 1 * * *'  #每天的9点50执行 （国内时间）  
+  workflow_dispatch:
 
 jobs:
   send_message:
