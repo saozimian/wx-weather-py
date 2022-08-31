@@ -31,14 +31,6 @@ template_id = os.environ["TEMPLATE_ID"]
 '''
 user_id_list = [
     {'user_id': 'olqaK5sXw4RM4PEaRgi9I0kH4ldE', "name": 'ㅤ', "date": "2021-03-01", "birthday": "03-26",
-     'city': '440300'},
-    {'user_id': 'olqaK5iLtf1e1O8y50FrAyoVF5G8', "name": "缱绻", "date": "2021-03-01", "birthday": "10-09",
-     'city': '440300'},
-    {'user_id': 'olqaK5nbxrC4ehk7Lf9QkSHHbfng', "name": "四喜丸子", "date": "2021-03-01", "birthday": "02-12",
-     'city': '440300'},
-    {'user_id': 'olqaK5p-v3b6gvFif4XLaAwfg0EE', "name": "别南山", "date": "2021-03-01", "birthday": "10-21",
-     'city': '440300'},
-    {'user_id': 'olqaK5haaWE7C8NJ8bclDpKp0Zg8', "name": "苏子瑜", "date": "2021-03-01", "birthday": "05-01",
      'city': '440300'}
 ]
 
