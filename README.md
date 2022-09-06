@@ -10,7 +10,7 @@ Gitee：https://gitee.com/zhanghuan08/wx-weather-py
 
 > 通过 微信公众号定时发送模板消息~~
 
-<img src="https://image.codehuan.com/image/202209061616187.png" alt="image-20220906161625842" style="zoom: 33%;" />
+![image-20220906163830322](https://image.codehuan.com/image/202209061638771.png)
 
 ## 食用方法
 
