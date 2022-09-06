@@ -10,29 +10,29 @@ Gitee：https://gitee.com/zhanghuan08/wx-weather-py
 
 > 通过 微信公众号定时发送模板消息~~
 
-![img.png](https://image.codehuan.com/image/202208242046885.png)
+<img src="https://image.codehuan.com/image/202209061616187.png" alt="image-20220906161625842" style="zoom: 33%;" />
 
 ## 食用方法
 
 ### 1、Fork 本项目
 
-![img.png](https://image.codehuan.com/image/202208242046822.png)
+![image-202209061617397](https://image.codehuan.com/image/202209061617397.jpg)
 
 ### 2、注册测试微信公众号
 
 注册地址：https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
 
-![image-20220824204559401](https://image.codehuan.com/image/202208242046231.png)
+![image-20220824204559401](https://image.codehuan.com/image/202209061620253.png)
 
 #### 2.1、微信公众号测试参数获取
 
 扫码注册登录之后，可以看到下面的 `appID` 和 `appsecret` 参数，这个我们待会用到。
 
-![img6.png](https://image.codehuan.com/image/202208242046456.png)
+![image-202209061620253](https://image.codehuan.com/image/202209061620253.png)
 
 #### 2.2、创建模板
 
-![image-20220824205152299](https://image.codehuan.com/image/202208242051657.png)
+<img src="https://image.codehuan.com/image/202209061627392.png" alt="image-202209061627392" style="zoom:80%;" />
 
 **模板样例**
 
@@ -51,14 +51,14 @@ Gitee：https://gitee.com/zhanghuan08/wx-weather-py
 
 #### 2.3、获取模板ID
 
-![img.png](https://image.codehuan.com/image/202208242046594.png)
+![image-202209061621443](https://image.codehuan.com/image/202209061621443.png)
 
 #### 2.4、二维码
 
 **使用者必须先让他/她扫描关注这个二维码，关注之后右侧列表会显示对应的人员openid，
 我们也可以通过接口获取这个人员id，也可以写在我们的配置文件中。**
 
-![image-20220824205904029](https://image.codehuan.com/image/202208242059523.png)
+![image-20220824205904029](https://image.codehuan.com/image/202209061622123.png)
 
 有了上面的信息，我们返回到第一步，在我们`Fork`下来的项目中进行配置。
 
@@ -70,13 +70,13 @@ Gitee：https://gitee.com/zhanghuan08/wx-weather-py
 
 如果我们这边使用高德开放平台的天气查询接口。没有账号首先进行。
 
-![image-20220824211053139](https://image.codehuan.com/image/202208242110590.png)
+![image-20220824211053139](https://image.codehuan.com/image/202209061622589.png)
 
 #### 3.2、创建应用
 
 `应用名称` 和`应用类型`可以随便填写。
 
-![image-20220824211252800](https://image.codehuan.com/image/202208242112938.png)
+![image-20220824211252800](https://image.codehuan.com/image/202209061622894.png)
 
 #### 3.3、添加`Key`
 
@@ -84,11 +84,11 @@ Key名称：任意填写。
 
 服务平台选择 ：`Web服务`。
 
-![image-20220824211434237](https://image.codehuan.com/image/202208242114560.png)
+![image-20220824211434237](https://image.codehuan.com/image/202209061622383.png)
 
 #### 3.4、获取`Key`
 
-![image-20220824211610758](https://image.codehuan.com/image/202208242116977.png)
+![image-20220824211610758](https://image.codehuan.com/image/202209061622263.png)
 
 #### 3.5、天气接口
 
@@ -117,11 +117,11 @@ https://restapi.amap.com/v3/weather/weatherInfo?city=110101&key=<用户key>
 
 来到我们项目首页，按照图中的顺序进行选择。①、②、③。
 
-![img.png](https://image.codehuan.com/image/202208242046704.png)
+![image-202209061623234](https://image.codehuan.com/image/202209061623234.png)
 
 第三步是进行我们的参数修改，选择`New Repository secret`。
 
-![image-20220824210442601](https://image.codehuan.com/image/202208242104799.png)
+![image-20220824210442601](https://image.codehuan.com/image/202209061623494.png)
 
 `Name`：对应的Key
 
@@ -129,11 +129,11 @@ https://restapi.amap.com/v3/weather/weatherInfo?city=110101&key=<用户key>
 
 完成之后如下图。
 
-![image-20220824210254552](https://image.codehuan.com/image/202208242103796.png)
+![image-20220824210254552](https://image.codehuan.com/image/202209061623436.png)
 
 ## 5、查看我们的定时任务
 
-![img.png](https://image.codehuan.com/image/202208242119166.png)
+![imgge-202209061623998](https://image.codehuan.com/image/202209061623998.png)
 
 ### 5.1、修改定时任务时间
 
@@ -148,7 +148,7 @@ https://restapi.amap.com/v3/weather/weatherInfo?city=110101&key=<用户key>
 
 或者添加 `workflow_dispatch:` 在我们的定时任务列表会出现一个按钮，可以手动去执行
 
-![image-20220825121735027](https://image.codehuan.com/image/202208251217399.png)
+![image-20220825121735027](https://image.codehuan.com/image/202209061623866.png)
 
 `main.yml样例`
 ```yaml
@@ -193,4 +193,4 @@ jobs:
 >
 > Gitee：https://gitee.com/zhanghuan08/wx-weather
 
-![image-20220824213523984](https://image.codehuan.com/image/202208242135105.png)
+![image-20220824213523984](https://image.codehuan.com/image/202209061623380.png)
