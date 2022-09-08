@@ -28,11 +28,12 @@ Gitee：https://gitee.com/zhanghuan08/wx-weather-py
 
 扫码注册登录之后，可以看到下面的 `appID` 和 `appsecret` 参数，这个我们待会用到。
 
-![image-202209061620253](https://image.codehuan.com/image/202209061620253.png)
+![image-202209061627392](https://image.codehuan.com/image/202209061627392.png)
 
 #### 2.2、创建模板
 
-<img src="https://image.codehuan.com/image/202209061627392.png" alt="image-202209061627392" style="zoom:80%;" />
+![image-202209061621343](https://image.codehuan.com/image/202209061621343.png)
+
 
 **模板样例**
 
