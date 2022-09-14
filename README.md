@@ -10,7 +10,7 @@ Gitee：https://gitee.com/zhanghuan08/wx-weather-py
 
 > 通过 微信公众号定时发送模板消息~~
 
-![image-20220906163830322](https://image.codehuan.com/image/202209061638771.png)
+![image-202209061638771](https://image.codehuan.com/image/202209061638771.png)
 
 ## 食用方法
 
@@ -22,7 +22,7 @@ Gitee：https://gitee.com/zhanghuan08/wx-weather-py
 
 注册地址：https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
 
-![image-20220824204559401](https://image.codehuan.com/image/202209061620253.png)
+![image-202209061620253](https://image.codehuan.com/image/202209061620253.png)
 
 #### 2.1、微信公众号测试参数获取
 
