@@ -10,16 +10,16 @@ from wechatpy.client.api import WeChatMessage
 today = datetime.now()
 
 # 微信公众号 app_id
-app_id = os.environ["APP_ID"]
+app_id = os.environ["wx0b46483587e42106"]
 
 # 微信公众号 app_secret
-app_secret = os.environ["APP_SECRET"]
+app_secret = os.environ["2d5314c2739c5947d64a41ff96f8949b"]
 
 # 天气接口密钥 key
-key = os.environ["KEY"]
+key = os.environ["6a884ef0485ce94de028f2686ff6baba"]
 
 # 微信公众号 模板id
-template_id = os.environ["TEMPLATE_ID"]
+template_id = os.environ["nn_v9rvOSKW7YJ5f4DI7CRdWj7w1_U2l85EoPmNV_0A"]
 
 # 用户列表 也可通过接口获取，但是接口获取的只有用户id没有用户昵称，不方便部分数据展示，如果有新增人员，对应添加一个user对象即可
 '''
@@ -30,8 +30,10 @@ template_id = os.environ["TEMPLATE_ID"]
        city: 城市编码，api接口文档处查询
 '''
 user_id_list = [
-    {'user_id': 'olqaK5sXw4RM4PEaRgi9I0kH4ldE', "name": 'ㅤ', "date": "2021-03-01", "birthday": "03-26",
-     'city': '440300'}
+    {'user_id': 'oqMsm6K3LUYT4lzAqqtM42eKI0ho', "name": '小糖ᥫᩣ', "date": "2022-04-27", "birthday": "05-13",
+     'city': '422801'}
+     {'user_id': 'oqMsm6OO5I1amqDIqSOkzoQzBW-c', "name": '梦总会碎,', "date": "2022-04-27", "birthday": "05-13",
+     'city': '422801'}
 ]
 
 
